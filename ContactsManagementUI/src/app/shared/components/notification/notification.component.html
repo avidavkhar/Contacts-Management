@@ -1,0 +1,12 @@
+<div id="myModal" class="modal" *ngIf="notification && notification.showPopup">
+	<div class="modal-content">
+		<div class="modal-header" [ngClass]="errorPopup ? 'error-message' : 'info-message'">
+			<span class="close" (click)="!errorPopup ? navigateContact() : closePopup()">&times;</span>
+		</div>
+		<div class="modal-body">
+			<p>{{ notification.message }}</p> <br />
+			<button [ngClass]="errorPopup ? 'error-message' : 'info-message'" class="btn btn-primary float-right"
+				(click)="!errorPopup ? navigateContact() : closePopup()">Ok</button>
+		</div>
+	</div>
+</div>

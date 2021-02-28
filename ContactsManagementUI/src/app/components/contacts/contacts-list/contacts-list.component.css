@@ -1,0 +1,66 @@
+a {
+  color: #008cba !important;
+}
+a:hover {
+  cursor: pointer;
+}
+.clscreate {
+    color: #ffffff !important;
+  }
+  .clsContactList {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: large;
+  }
+  .clsNoRecords {
+    font-size: large;
+  }
+  .btnNew {
+    padding-bottom: 10px;
+  }
+  .btnSearch {
+    border: 1px solid #ced4da
+  }
+
+.input-icons i { 
+  position: absolute; 
+} 
+
+.input-icons { 
+  width: 100%; 
+  margin-bottom: 10px; 
+} 
+
+.icon { 
+  padding: 10px; 
+  min-width: 40px; 
+} 
+
+.input-field { 
+  width: 100%; 
+  padding: 10px; 
+  text-align: center; 
+}
+
+.clsEdit {
+  cursor: pointer;
+}
+
+.table-primary, .table-primary>td, .table-primary>th {
+  background-color: #007bff !important;
+}
+
+
+table {
+  font-size: 0.825rem;
+}
+
+.table-primary, .table-success, .table-info, .table-warning, .table-danger {
+  color: #fff;
+}
+
+.table-light,
+.table-light > th,
+.table-light > td {
+  background-color: #eee;
+}

@@ -1,0 +1,55 @@
+<div class="card m-3">
+  <h5 class="card-header">Update contact</h5>
+  <div class="card-body">
+    <form name="form" (ngSubmit)="f.form.valid && updateContact()" #f="ngForm" novalidate>
+      <div class="form-row">
+        <div class="form-group col-8">
+          <label>First Name</label>
+          <input type="text" name="firstName" class="form-control" [(ngModel)]="model.firstName" #firstName="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }"  maxlength="100" required>
+          <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
+            <div *ngIf="firstName.errors.required">First Name is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-8">
+          <label>Last Name</label>
+          <input type="text" name="lastName" class="form-control" [(ngModel)]="model.lastName" #lastName="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }"  maxlength="100" required>
+          <div *ngIf="f.submitted && lastName.invalid" class="invalid-feedback">
+            <div *ngIf="lastName.errors.required">Last Name is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-8">
+          <label>Email</label>
+          <input type="text" name="email" class="form-control" [(ngModel)]="model.emailAddress" #email="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email>
+          <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+            <div *ngIf="email.errors.required">Email is required</div>
+            <div *ngIf="email.errors.email">Email must be a valid email address</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-8">
+          <label>Date of Birth</label>
+          <input type="date" name="dob" class="form-control" [ngModel]="model.dob | date:'yyyy-MM-dd'"
+            (ngModelChange)="model.dob=$event" #dob="ngModel" [ngClass]="{ 'is-invalid': f.submitted && dob.invalid }"
+            required>
+          <div *ngIf="f.submitted && dob.invalid" class="invalid-feedback">
+            <div *ngIf="dob.errors.required">Date of Birth is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row text-right">
+        <div class="form-group col-8">
+          <button class="btn btn-primary mr-1" type="submit">Save</button>
+          <button class="btn btn-secondary" type="button" (click)="navigatetoContacts()">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

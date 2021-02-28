@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="lead btnNew">
+    <a class="btn btn-primary btn-lg clscreate" (click)="createContact()" role="button">Add new contact</a>
+  </div>
+  <div class="input-icons">
+    <i class="fa fa-search icon"></i>
+    <input type="text" class="form-control input-field" placeholder="Search by first name or last name"
+      (keyup)="searchContacts($event)" name="search">
+  </div>
+  <div class="clsContactList">Contacts List</div>
+  <table class="table">
+    <thead>
+      <tr class="table-primary">
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email Address</th>
+        <th scope="col">Date of Birth</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contactsList">
+        <th>{{contact.firstName}}</th>
+        <td>{{contact.lastName}}</td>
+        <td>{{contact.emailAddress}}</td>
+        <td>{{contact.dob | date : 'dd-MM-yyyy'}}</td>
+        <th>
+          <span class="clsEdit"><i class="fa fa-edit" (click)=editContact(contact)></i></span>
+        </th>
+      </tr>
+    </tbody>
+    <tfoot *ngIf="contactsList?.length < 1">
+      <tr class="text-center clsNoRecords">
+        <td colspan=4>No contacts found.</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
